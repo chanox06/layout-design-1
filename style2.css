@@ -90,12 +90,21 @@ h1,h2,h3,.hero-badge{font-family:'Playfair Display',serif}
 .section-heading p{color:var(--muted);margin:0}
 .centered{text-align:center}
 
+/* ===== Quick Stats Strip ===== */
+.quick-stats{background:var(--deep);color:#fff;padding:28px 0;position:relative;z-index:5;box-shadow:0 10px 30px rgba(7,55,93,.15)}
+.quick-stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.quick-stat{display:flex;align-items:center;gap:16px;padding:8px 16px;border-right:1px solid rgba(255,255,255,.12)}
+.quick-stat:last-child{border-right:none}
+.qs-icon{width:48px;height:48px;border-radius:12px;background:rgba(227,174,54,.18);color:var(--gold-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(227,174,54,.3)}
+.quick-stat strong{display:block;font-size:15px;color:#fff}
+.quick-stat span{font-size:13px;color:rgba(255,255,255,.75)}
+
 /* ===== About ===== */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
 .about-image{position:relative}
 .about-image img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .4s}
 .about-image:hover img{transform:scale(1.02)}
-.about-badge{position:absolute;bottom:-24px;right:-24px;background:var(--burgundy);color:#fff;border-radius:var(--radius);padding:20px 28px;text-align:center;box-shadow:0 18px 40px rgba(166,0,31,.35)}
+.about-badge{position:absolute;bottom:-24px;left:-24px;background:var(--burgundy);color:#fff;border-radius:var(--radius);padding:20px 28px;text-align:center;box-shadow:0 18px 40px rgba(166,0,31,.35)}
 .badge-num{display:block;font-size:32px;font-weight:800;font-family:'Playfair Display',serif;line-height:1}
 .badge-text{font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
 .about-content h2{font-size:44px;line-height:1.12;margin:0 0 16px;color:var(--deep);text-wrap:balance}
@@ -176,13 +185,14 @@ h1,h2,h3,.hero-badge{font-family:'Playfair Display',serif}
 .discipleship-media{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);position:relative;min-height:340px}
 .dominican-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-/* ===== Pastor ===== */
-.pastor-section{padding-top:40px}
-.pastor-grid{display:grid;grid-template-columns:340px 1fr;gap:60px;align-items:center;max-width:960px}
+/* ===== Pastor + Giving ===== */
+.pastor-giving-section{padding-top:40px}
+.pastor-giving-grid{display:grid;grid-template-columns:340px 1fr;gap:50px;align-items:center;max-width:1100px}
 .pastor-image img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .35s}
 .pastor-image:hover img{transform:translateY(-5px)}
 .pastor-content h2{font-size:40px;line-height:1.12;margin:0 0 16px;color:var(--deep)}
 .pastor-content p{margin:0 0 24px;color:var(--muted);font-size:17px}
+.pastor-giving-grid .giving-card{grid-column:1/-1;margin-top:10px}
 
 /* ===== Sermon ===== */
 .sermon-strip{background:linear-gradient(105deg,rgba(126,0,22,.95),rgba(191,23,55,.92)),url('assets/gallery1.jpg') center/cover fixed;color:#fff;padding:56px 0}
@@ -195,12 +205,15 @@ h1,h2,h3,.hero-badge{font-family:'Playfair Display',serif}
 
 /* ===== Contact ===== */
 .contact-section{background:linear-gradient(180deg,#fff,#f9fbfd)}
-.contact-form{background:#fff;padding:32px;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);max-width:900px;margin:0 auto}
+.contact-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start;max-width:1100px;margin:0 auto}
+.contact-form{background:#fff;padding:32px;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
 .form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
 .contact-form input,.contact-form textarea{width:100%;padding:15px 16px;border:1px solid #dfe3e8;border-radius:8px;font:inherit;transition:border-color .2s,box-shadow .2s}
 .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:rgba(11,63,105,.55);box-shadow:0 0 0 4px rgba(11,63,105,.08)}
 .contact-form textarea{min-height:140px;resize:vertical;margin-bottom:14px}
 .contact-form .btn{width:100%}
+.contact-layout .location-info{padding:8px 0}
+.contact-layout .location-info h2{font-size:32px;margin:0 0 24px}
 
 /* ===== Gallery ===== */
 .gallery-row{display:grid;grid-template-columns:repeat(3,1fr);height:260px;overflow:hidden}
@@ -247,11 +260,11 @@ h1,h2,h3,.hero-badge{font-family:'Playfair Display',serif}
   .main-nav{display:none}
   .nav-wrap{justify-content:space-between}
   .hero h1{font-size:44px}
-  .about-grid,.discipleship-grid,.location-grid{grid-template-columns:1fr}
+  .about-grid,.discipleship-grid,.location-grid,.contact-layout{grid-template-columns:1fr}
   .academy-grid{grid-template-columns:1fr;text-align:center}
   .academy-logo{margin:auto;max-width:280px}
   .check-list{text-align:left}
-  .pastor-grid{grid-template-columns:1fr;max-width:680px}
+  .pastor-giving-grid{grid-template-columns:1fr;max-width:680px}
   .sermon-inner{flex-direction:column;align-items:flex-start}
   .events-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -259,6 +272,9 @@ h1,h2,h3,.hero-badge{font-family:'Playfair Display',serif}
   .parallax-band,.events-section,.sermon-strip{background-attachment:scroll}
   .giving-card{flex-direction:column;text-align:center;padding:36px 28px}
   .giving-content p{margin:0 auto}
+  .quick-stats-inner{grid-template-columns:repeat(2,1fr);gap:16px}
+  .quick-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.12);padding:12px 8px}
+  .quick-stat:nth-last-child(-n+2){border-bottom:none}
 }
 
 @media (max-width:640px){
@@ -272,7 +288,7 @@ h1,h2,h3,.hero-badge{font-family:'Playfair Display',serif}
   .section{padding:64px 0}
   .section-heading h2,.about-content h2,.academy-content h2,.discipleship-content h2,.pastor-content h2,.location-info h2{font-size:32px}
   .about-grid{gap:48px}
-  .about-badge{bottom:-16px;right:-8px;padding:14px 20px}
+  .about-badge{bottom:-16px;left:-8px;padding:14px 20px}
   .about-stats{gap:24px}
   .ministry-grid{grid-template-columns:repeat(2,1fr)}
   .form-row{grid-template-columns:1fr}
@@ -283,4 +299,7 @@ h1,h2,h3,.hero-badge{font-family:'Playfair Display',serif}
   .parallax-content h2{font-size:44px}
   .series-list{flex-wrap:wrap}
   .giving-card{padding:28px 20px}
+  .quick-stats-inner{grid-template-columns:1fr}
+  .quick-stat{border-bottom:1px solid rgba(255,255,255,.12)}
+  .quick-stat:last-child{border-bottom:none}
 }
